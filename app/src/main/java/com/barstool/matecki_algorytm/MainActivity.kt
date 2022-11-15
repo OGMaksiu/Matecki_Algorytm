@@ -54,4 +54,29 @@ class MainActivity : AppCompatActivity() {
                 text.text = liczby.last.toString() + " " + liczby.first.toString()
 
             }
-        }}}
+
+
+            val queue: Queue<Int> = LinkedList<Int>()
+            val queadd = findViewById<Button>(R.id.button4)
+            val quedel = findViewById<Button>(R.id.button5)
+            val queext = findViewById<Button>(R.id.button6)
+            val queelement = findViewById<Button>(R.id.button7)
+            val quein = findViewById<EditText>(R.id.editTextTextPersonName2)
+            val text2 = findViewById<TextView>(R.id.textView5)
+
+        queext.setOnClickListener {
+            text2.text = queue.toString()
+        }
+        queelement.setOnClickListener {
+            var pierwszy = queue.peek()
+            text2.text = pierwszy.toString()
+        }
+        queadd.setOnClickListener {
+            if(quein.text.toString() != "")
+                queue.add(quein.text.toString().toInt())
+        }
+        quedel.setOnClickListener {
+            queue.poll()
+        }
+        }
+        }}
